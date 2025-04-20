@@ -2,7 +2,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { House, Map, MapPin, Route } from "lucide-react";
+import { House, Map, MapPin, Route, User, Users, LayoutDashboard } from "lucide-react";
 
 interface SidebarProps {
   className?: string;
@@ -68,9 +68,27 @@ export function Sidebar({ className }: SidebarProps) {
               title="Beneficiaries"
               isActive={pathname === "/beneficiaries"}
             />
+            <SidebarItem
+              href="/admin"
+              icon={Users}
+              title="Admin Portal"
+              isActive={pathname === "/admin"}
+            />
+            <SidebarItem
+              href="/dashboard"
+              icon={LayoutDashboard}
+              title="User Dashboard"
+              isActive={pathname === "/dashboard"}
+            />
+            <SidebarItem
+              href="/login"
+              icon={User}
+              title="Login"
+              isActive={pathname === "/login"}
+            />
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
